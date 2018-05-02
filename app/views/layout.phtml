@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="<?php echo(SITE_ENCODING); ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php echo($title); ?></title>
+    <meta name="description" content="<?php echo($description); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="//<?php echo($_SERVER['HTTP_HOST']  ); ?>/">
+    <link rel="stylesheet" href="public/assets/css/style.css">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->    
+    <?php $this->controller->render(); ?>
+
+    <footer class="footer text-small text-muted">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <h3 class="display-5">Legal</h3>
+            <ul class="list-unstyled">
+            <li>Copyright &copy;</li>
+            <li><?php echo(APP_NAME); ?></li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <h3 class="display-5">Contact</h3>
+            <ul class="list-unstyled">
+            <li><a href=""><i class="far fa-envelope" aria-hidden="true"></i> E-Mail</a></li>
+            <li><a href=""><i class="fab fa-skype" aria-hidden="true"></i> Skype</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <h3 class="display-5">About</h3>
+            <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus vel rem! Iusto, hic ratione neque est ipsam molestiae nobis ex a natus dolorum! Illum voluptatem totam possimus deserunt minima.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="public/assets/js/jquery-3.3.1.js"></script>
+    <script src="public/assets/js/popper.js"></script>
+    <script src="public/assets/js/tether.js"></script>
+  </body>
+</html>
