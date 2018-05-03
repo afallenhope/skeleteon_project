@@ -1,33 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="#"><i class="<?php echo APP_ICON; ?>" aria-hidden="true"></i><?php echo APP_NAME; ?></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbarMain">
+  <div class="container">
+    <a class="navbar-brand" href="#">  <?php if (!(empty(APP_BRAND))): ?>
+      <img src="<?php echo APP_BRAND; ?>" alt="<?php echo APP_NAME; ?>" width="50" height="50">
+    <?php elseif (!empty(APP_ICON)): ?>
+      <i class="<?php echo APP_ICON; ?>" aria-hidden="true"></i>
+    <?php endif; ?>
+    <?php echo APP_NAME; ?></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="mainNavbar">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown07">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-          </form>
-        </div>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarTop">
+      <ul class="navbar-nav ml-auto">
+        <?php foreach($links as $link): ?>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo $link['href']; ?>"><?php echo $link['text']; ?></a>
+        </li>
+        <?php endforeach;?>       
+        </ul>       
+    </div>
+  </div>
+</nav>

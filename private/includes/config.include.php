@@ -3,6 +3,8 @@
 // App Settings
 $app_name         = 'YOUR APP NAME';
 $app_icon         = 'FONTAWESOME ICON';
+$app_brand        = ''; // url / image logo
+$app_desc         = 'SITE DESCRIPTION';
 $timezone         = 'America/Toronto';
 $charset          = 'utf-8';
 $debug_mode       = TRUE;
@@ -78,3 +80,5 @@ define('SITE_ENCODING', $charset);
 define('DEBUG_MODE', $debug_mode);
 define('APP_NAME', $app_name);
 define('APP_ICON', $app_icon);
+define('APP_BRAND', $app_brand);
+define('APP_DESC', $app_desc);
