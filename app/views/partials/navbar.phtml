@@ -13,11 +13,24 @@
     <div class="collapse navbar-collapse" id="navbarTop">
       <ul class="navbar-nav ml-auto">
         <?php foreach($links as $link): ?>
+          <?php if ($link['subitems']): ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://example.com" id="<?php echo $link['id'] ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $link['text']; ?></a>
+            <div class="dropdown-menu" aria-labelledby="<?php echo $link['id'] ; ?>">
+                <?php foreach($link['subitems'] as $sub): ?>
+                <a class="dropdown-item" href="<?php echo $sub['href']; ?>"><?php echo $sub['text']; ?></a>
+                <?php endforeach; ?>
+            </div>
+          <?php else: ?>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo $link['href']; ?>"><?php echo $link['text']; ?></a>
         </li>
-        <?php endforeach;?>       
-        </ul>       
+
+        <?php endif; endforeach; ?>       
+            
+        </li>
+      </ul>
+     
     </div>
   </div>
 </nav>
